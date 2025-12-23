@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-8">
+        <h2>Календарь расписаний</h2>
+        <div id="calendar-container" class="bg-light p-3 rounded"></div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0">Статистика водителей</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">Режим отображения:</label>
+                    <select id="modeSwitch" class="form-select">
+                        <option value="real" selected>Реальные данные</option>
+                        <option value="statistical">По статистике (21.7%)</option>
+                    </select>
+                </div>
+
+                <div id="absenceStats">
+                    <p><strong>Водителей по отчету:</strong> {{ base_count }}</p>
+                    <p><strong>Отсутствующих:</strong> {{ real_absent }}</p>
+                    <p><strong>Всего водителей:</strong> {{ total_drivers_real }}</p>
+                    <p class="text-muted small">Уникальных водителей введено: {{ real_absent }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header bg-warning">
+                <h5 class="mb-0">Последние отсутствия</h5>
+            </div>
+            <div class="card-body">
+                <ul id="recentAbsences" class="list-group">
+                    <li class="list-group-item text-muted">Нет данных</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-4">
+    <div class="d-flex flex-column flex-md-row align-items-md-end gap-3">
+        <div>
+            <label for="routeSelect" class="form-label mb-1">Маршрут для просмотра</label>
+            <select id="routeSelect" class="form-select form-select-sm" style="max-width: 220px;">
+                <option value="" disabled selected>Загрузка...</option>
+            </select>
+        </div>
+        <div class="form-check form-switch mt-2 mt-md-0">
+            <input class="form-check-input" type="checkbox" role="switch" id="weekendSwitch">
+            <label class="form-check-label" for="weekendSwitch">
+                Можно вызывать с выходного дня
+            </label>
+        </div>
+        <div class="text-muted small" id="routeHint">
+            Выберите маршрут, затем кликните день в календаре
+        </div>
+    </div>
+    <div id="scheduleDisplay" class="mt-3"></div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/calendar.js') }}"></script>
+<script>
+    $(document).ready(function() {
+        // Инициализация календаря
+        initCalendar();
+
+        // Обработчик переключения режима
+        $('#modeSwitch').change(function() {
+            updateAbsenceStats($(this).val());
+        });
+
+        // Загрузка последних отсутствий
+        loadRecentAbsences();
+
+        // Обработчик скачивания отчета
+        $('#download-report').click(function() {
+            window.location.href = '/get-report';
+        });
+
+    });
+
+    function updateAbsenceStats(mode) {
+        $.get('/absence-data', {mode: mode}, function(data) {
+            const detailsBlock = data.details ? `<p class="text-muted small">${data.details}</p>` : '';
+            const noteBlock = data.note ? `<p class="text-warning small">${data.note}</p>` : '';
+            let html = `
+                <p><strong>Водителей по отчету:</strong> ${data.base_count}</p>
+                <p><strong>Отсутствующих:</strong> ${data.absent_count}</p>
+                <p><strong>Всего водителей:</strong> ${data.total_drivers}</p>
+                ${detailsBlock}
+                ${noteBlock}
+            `;
+            $('#absenceStats').html(html);
+        });
+    }
+
+    function loadRecentAbsences() {
+        $.get('/get-real-absences', function(data) {
+            if (data.length === 0) {
+                $('#recentAbsences').html('<li class="list-group-item text-muted">Нет данных об отсутствиях</li>');
+                return;
+            }
+
+            // Берем последние 5 записей
+            const recent = data.slice(-5).reverse();
+            let html = '';
+
+            recent.forEach(item => {
+                const reasonText = ['Отпуск', 'Больничный', 'Не предупредил'][item.reason];
+                html += `
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div>
+                            <strong>${item.tab_no}</strong> | Смена ${item.shift} | День ${item.day}<br>
+                            <small class="text-muted">${reasonText} | ${new Date(item.timestamp).toLocaleString()}</small>
+                        </div>
+                        <button class="btn btn-sm btn-outline-danger ms-2 delete-absence-btn" data-id="${item.id}" title="Удалить запись">
+                            &#128465;
+                        </button>
+                    </li>
+                `;
+            });
+
+            $('#recentAbsences').html(html);
+
+            // Обработчик для кнопок "корзинки"
+            $('.delete-absence-btn').click(function() {
+                const id = $(this).data('id');
+                if (id === undefined) return;
+
+                $.ajax({
+                    url: '/delete-absence',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ id: id }),
+                    success: function(response) {
+                        if (response.success) {
+                            // Перезагружаем список и обновляем статистику
+                            loadRecentAbsences();
+                            const currentMode = $('#modeSwitch').val();
+                            updateAbsenceStats(currentMode);
+                        } else {
+                            alert(response.error || 'Не удалось удалить запись');
+                        }
+                    },
+                    error: function(xhr) {
+                        const error = (xhr.responseJSON && xhr.responseJSON.error) ? xhr.responseJSON.error : 'Ошибка сервера';
+                        alert(error);
+                    }
+                });
+            });
+        });
+    }
+</script>
+{% endblock %}

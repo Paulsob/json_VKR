@@ -1,0 +1,845 @@
+{
+    "22719": {
+        "start_str": "04:39",
+        "end_str": "11:23",
+        "duration": 6.73,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "25249": {
+        "start_str": "04:46",
+        "end_str": "12:13",
+        "duration": 7.45,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "25952": {
+        "start_str": "04:48",
+        "end_str": "11:29",
+        "duration": 6.68,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "26107": {
+        "start_str": "04:50",
+        "end_str": "13:02",
+        "duration": 8.2,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "26654": {
+        "start_str": "04:54",
+        "end_str": "13:10",
+        "duration": 8.27,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "27426": {
+        "start_str": "04:57",
+        "end_str": "11:37",
+        "duration": 6.67,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "27852": {
+        "start_str": "04:58",
+        "end_str": "12:32",
+        "duration": 7.57,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "30472": {
+        "start_str": "05:02",
+        "end_str": "12:28",
+        "duration": 7.43,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "30608": {
+        "start_str": "05:05",
+        "end_str": "11:46",
+        "duration": 6.68,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "37251": {
+        "start_str": "05:07",
+        "end_str": "12:48",
+        "duration": 7.68,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "60016": {
+        "start_str": "05:12",
+        "end_str": "12:52",
+        "duration": 7.67,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "60095": {
+        "start_str": "05:14",
+        "end_str": "13:57",
+        "duration": 8.72,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "60477": {
+        "start_str": "05:17",
+        "end_str": "12:56",
+        "duration": 7.65,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "60503": {
+        "start_str": "05:18",
+        "end_str": "13:24",
+        "duration": 8.1,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "60827": {
+        "start_str": "05:21",
+        "end_str": "12:45",
+        "duration": 7.4,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "73032": {
+        "start_str": "05:25",
+        "end_str": "13:06",
+        "duration": 7.68,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "60452": {
+        "start_str": "05:26",
+        "end_str": "14:07",
+        "duration": 8.68,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "30660": {
+        "start_str": "05:28",
+        "end_str": "13:31",
+        "duration": 8.05,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "60234": {
+        "start_str": "05:29",
+        "end_str": "12:55",
+        "duration": 7.43,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "60110": {
+        "start_str": "05:36",
+        "end_str": "13:39",
+        "duration": 8.05,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "25184": {
+        "start_str": "05:36",
+        "end_str": "14:16",
+        "duration": 8.67,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "25166": {
+        "start_str": "05:44",
+        "end_str": "13:48",
+        "duration": 8.07,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "25232": {
+        "start_str": "05:55",
+        "end_str": "11:15",
+        "duration": 5.33,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "25244": {
+        "start_str": "06:01",
+        "end_str": "12:41",
+        "duration": 6.67,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "25923": {
+        "start_str": "06:06",
+        "end_str": "11:25",
+        "duration": 5.32,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "26221": {
+        "start_str": "06:06",
+        "end_str": "14:45",
+        "duration": 8.65,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "27736": {
+        "start_str": "06:16",
+        "end_str": "11:36",
+        "duration": 5.33,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "27985": {
+        "start_str": "06:22",
+        "end_str": "14:25",
+        "duration": 8.05,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "27990": {
+        "start_str": "06:25",
+        "end_str": "11:48",
+        "duration": 5.38,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "30312": {
+        "start_str": "06:31",
+        "end_str": "14:36",
+        "duration": 8.08,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "30381": {
+        "start_str": "06:46",
+        "end_str": "12:11",
+        "duration": 5.42,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "30592": {
+        "start_str": "07:01",
+        "end_str": "15:04",
+        "duration": 8.05,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "60137": {
+        "start_str": "07:14",
+        "end_str": "15:23",
+        "duration": 8.15,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "60455": {
+        "start_str": "08:11",
+        "end_str": "16:03",
+        "duration": 7.87,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "25160": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "25181": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "25186": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "25215": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "26554": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "26564": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "26569": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "26607": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "26980": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "27055": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "27833": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "27940": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "29721": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "30059": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "30425": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "30527": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "37466": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "60152": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "60249": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "60311": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "60461": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "60480": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "60492": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "60542": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "60831": {
+        "start_str": "05:00",
+        "end_str": "14:00",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 1,
+        "note": "РЕЗЕРВ"
+    },
+    "20549": {
+        "start_str": "16:10",
+        "end_str": "01:18",
+        "duration": 9.13,
+        "is_next_day": true,
+        "shift_code": 2
+    },
+    "25207": {
+        "start_str": "12:13",
+        "end_str": "21:22",
+        "duration": 9.15,
+        "is_next_day": false,
+        "shift_code": 2
+    },
+    "26108": {
+        "start_str": "15:53",
+        "end_str": "00:12",
+        "duration": 8.32,
+        "is_next_day": true,
+        "shift_code": 2
+    },
+    "26145": {
+        "start_str": "16:37",
+        "end_str": "00:49",
+        "duration": 8.2,
+        "is_next_day": true,
+        "shift_code": 2
+    },
+    "27432": {
+        "start_str": "16:28",
+        "end_str": "00:41",
+        "duration": 8.22,
+        "is_next_day": true,
+        "shift_code": 2
+    },
+    "29902": {
+        "start_str": "16:56",
+        "end_str": "01:07",
+        "duration": 8.18,
+        "is_next_day": true,
+        "shift_code": 2
+    },
+    "30390": {
+        "start_str": "12:32",
+        "end_str": "21:40",
+        "duration": 9.13,
+        "is_next_day": false,
+        "shift_code": 2
+    },
+    "32475": {
+        "start_str": "15:43",
+        "end_str": "00:02",
+        "duration": 8.32,
+        "is_next_day": true,
+        "shift_code": 2
+    },
+    "60322": {
+        "start_str": "16:09",
+        "end_str": "00:28",
+        "duration": 8.32,
+        "is_next_day": true,
+        "shift_code": 2
+    },
+    "25224": {
+        "start_str": "12:48",
+        "end_str": "21:56",
+        "duration": 9.13,
+        "is_next_day": false,
+        "shift_code": 2
+    },
+    "60398": {
+        "start_str": "12:52",
+        "end_str": "22:06",
+        "duration": 9.23,
+        "is_next_day": false,
+        "shift_code": 2
+    },
+    "60424": {
+        "start_str": "13:57",
+        "end_str": "22:02",
+        "duration": 8.08,
+        "is_next_day": false,
+        "shift_code": 2
+    },
+    "25252": {
+        "start_str": "12:56",
+        "end_str": "21:06",
+        "duration": 8.17,
+        "is_next_day": false,
+        "shift_code": 2
+    },
+    "60570": {
+        "start_str": "13:24",
+        "end_str": "21:44",
+        "duration": 8.33,
+        "is_next_day": false,
+        "shift_code": 2
+    },
+    "60829": {
+        "start_str": "16:01",
+        "end_str": "00:20",
+        "duration": 8.32,
+        "is_next_day": true,
+        "shift_code": 2
+    },
+    "26615": {
+        "start_str": "13:06",
+        "end_str": "21:17",
+        "duration": 8.18,
+        "is_next_day": false,
+        "shift_code": 2
+    },
+    "62707": {
+        "start_str": "14:07",
+        "end_str": "22:11",
+        "duration": 8.07,
+        "is_next_day": false,
+        "shift_code": 2
+    },
+    "25180": {
+        "start_str": "13:31",
+        "end_str": "21:55",
+        "duration": 8.4,
+        "is_next_day": false,
+        "shift_code": 2
+    },
+    "60247": {
+        "start_str": "16:46",
+        "end_str": "00:58",
+        "duration": 8.2,
+        "is_next_day": true,
+        "shift_code": 2
+    },
+    "25234": {
+        "start_str": "13:39",
+        "end_str": "22:04",
+        "duration": 8.42,
+        "is_next_day": false,
+        "shift_code": 2
+    },
+    "60038": {
+        "start_str": "14:16",
+        "end_str": "20:43",
+        "duration": 6.45,
+        "is_next_day": false,
+        "shift_code": 2
+    },
+    "30015": {
+        "start_str": "13:48",
+        "end_str": "22:13",
+        "duration": 8.42,
+        "is_next_day": false,
+        "shift_code": 2
+    },
+    "60000": {
+        "start_str": "16:30",
+        "end_str": "00:17",
+        "duration": 7.78,
+        "is_next_day": true,
+        "shift_code": 2
+    },
+    "27978": {
+        "start_str": "16:19",
+        "end_str": "01:27",
+        "duration": 9.13,
+        "is_next_day": true,
+        "shift_code": 2
+    },
+    "60456": {
+        "start_str": "16:39",
+        "end_str": "00:26",
+        "duration": 7.78,
+        "is_next_day": true,
+        "shift_code": 2
+    },
+    "29869": {
+        "start_str": "14:45",
+        "end_str": "21:12",
+        "duration": 6.45,
+        "is_next_day": false,
+        "shift_code": 2
+    },
+    "20568": {
+        "start_str": "18:03",
+        "end_str": "23:18",
+        "duration": 5.25,
+        "is_next_day": false,
+        "shift_code": 2
+    },
+    "25243": {
+        "start_str": "14:25",
+        "end_str": "20:04",
+        "duration": 5.65,
+        "is_next_day": false,
+        "shift_code": 2
+    },
+    "26670": {
+        "start_str": "16:07",
+        "end_str": "00:01",
+        "duration": 7.9,
+        "is_next_day": true,
+        "shift_code": 2
+    },
+    "27058": {
+        "start_str": "14:36",
+        "end_str": "22:55",
+        "duration": 8.32,
+        "is_next_day": false,
+        "shift_code": 2
+    },
+    "30588": {
+        "start_str": "16:48",
+        "end_str": "00:35",
+        "duration": 7.78,
+        "is_next_day": true,
+        "shift_code": 2
+    },
+    "32947": {
+        "start_str": "15:04",
+        "end_str": "20:44",
+        "duration": 5.67,
+        "is_next_day": false,
+        "shift_code": 2
+    },
+    "60454": {
+        "start_str": "15:23",
+        "end_str": "21:02",
+        "duration": 5.65,
+        "is_next_day": false,
+        "shift_code": 2
+    },
+    "60459": {
+        "start_str": "16:03",
+        "end_str": "00:44",
+        "duration": 8.68,
+        "is_next_day": true,
+        "shift_code": 2
+    },
+    "60463": {
+        "start_str": "17:06",
+        "end_str": "01:17",
+        "duration": 8.18,
+        "is_next_day": true,
+        "shift_code": 2
+    },
+    "25727": {
+        "start_str": "15:00",
+        "end_str": "23:59",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 2,
+        "note": "РЕЗЕРВ"
+    },
+    "26611": {
+        "start_str": "15:00",
+        "end_str": "23:59",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 2,
+        "note": "РЕЗЕРВ"
+    },
+    "27008": {
+        "start_str": "15:00",
+        "end_str": "23:59",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 2,
+        "note": "РЕЗЕРВ"
+    },
+    "27182": {
+        "start_str": "15:00",
+        "end_str": "23:59",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 2,
+        "note": "РЕЗЕРВ"
+    },
+    "27881": {
+        "start_str": "15:00",
+        "end_str": "23:59",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 2,
+        "note": "РЕЗЕРВ"
+    },
+    "29592": {
+        "start_str": "15:00",
+        "end_str": "23:59",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 2,
+        "note": "РЕЗЕРВ"
+    },
+    "29929": {
+        "start_str": "15:00",
+        "end_str": "23:59",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 2,
+        "note": "РЕЗЕРВ"
+    },
+    "60089": {
+        "start_str": "15:00",
+        "end_str": "23:59",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 2,
+        "note": "РЕЗЕРВ"
+    },
+    "60097": {
+        "start_str": "15:00",
+        "end_str": "23:59",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 2,
+        "note": "РЕЗЕРВ"
+    },
+    "60366": {
+        "start_str": "15:00",
+        "end_str": "23:59",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 2,
+        "note": "РЕЗЕРВ"
+    },
+    "60386": {
+        "start_str": "15:00",
+        "end_str": "23:59",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 2,
+        "note": "РЕЗЕРВ"
+    },
+    "60425": {
+        "start_str": "15:00",
+        "end_str": "23:59",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 2,
+        "note": "РЕЗЕРВ"
+    },
+    "60426": {
+        "start_str": "15:00",
+        "end_str": "23:59",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 2,
+        "note": "РЕЗЕРВ"
+    },
+    "60479": {
+        "start_str": "15:00",
+        "end_str": "23:59",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 2,
+        "note": "РЕЗЕРВ"
+    },
+    "60502": {
+        "start_str": "15:00",
+        "end_str": "23:59",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 2,
+        "note": "РЕЗЕРВ"
+    },
+    "60505": {
+        "start_str": "15:00",
+        "end_str": "23:59",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 2,
+        "note": "РЕЗЕРВ"
+    },
+    "60659": {
+        "start_str": "15:00",
+        "end_str": "23:59",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 2,
+        "note": "РЕЗЕРВ"
+    },
+    "60810": {
+        "start_str": "15:00",
+        "end_str": "23:59",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 2,
+        "note": "РЕЗЕРВ"
+    },
+    "60838": {
+        "start_str": "15:00",
+        "end_str": "23:59",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 2,
+        "note": "РЕЗЕРВ"
+    },
+    "73547": {
+        "start_str": "15:00",
+        "end_str": "23:59",
+        "duration": 9.0,
+        "is_next_day": false,
+        "shift_code": 2,
+        "note": "РЕЗЕРВ"
+    }
+}
