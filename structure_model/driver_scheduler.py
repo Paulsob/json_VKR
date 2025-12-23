@@ -128,17 +128,14 @@ def choose_driver_for_slot(candidates, history_data, target_shift_start_dt, shif
 
 def run_planner(target_day, prev_day, route_number=None):
     """
-    Планировщик на один день.
-    route_number:
-      - None  -> использовать ROUTE_NUMBER из конфига (поведение как раньше)
-      - 55/9  -> считать конкретный маршрут по его листу расписания
+    Планировщик на один день для одного маршрута
     """
     if route_number is None:
         route_number = ROUTE_NUMBER
 
     print(f"ЗАПУСК ПЛАНИРОВЩИКА: ДЕНЬ {target_day}, маршрут {route_number} (история дня {prev_day})")
 
-    # Определяем выходной
+    # ---------------- ДАТА ----------------
     current_year = datetime.now().year
     current_month = datetime.now().month
     try:
@@ -146,20 +143,30 @@ def run_planner(target_day, prev_day, route_number=None):
     except Exception as e:
         print(f"Неверный день: {e}")
         return
-    is_weekend = target_date.weekday() >= 5  # 5=суббота, 6=воскресенье
 
-    # Берём имя листа из глобального SCHEDULE_SHEETS (будет заполнено routes_sync)
+    is_weekend = target_date.weekday() >= 5
+
+    # ---------------- ЛИСТ РАСПИСАНИЯ ----------------
     sheet_name = SCHEDULE_SHEETS.get((route_number, is_weekend))
     if not sheet_name:
         print(f"Не найден лист расписания для маршрута {route_number}, is_weekend={is_weekend}")
         return
 
+    # ---------------- ИСТОРИЯ ----------------
     history = load_history(prev_day)
     today_history_log = {}
 
-    # получили слоты
-    slots_s1 = get_schedule_slots(FILE_PATH, ROW_START, STEP, COL_SHIFT_1_START, COL_SHIFT_1_END, 1, sheet_name)
-    slots_s2 = get_schedule_slots(FILE_PATH, ROW_START, STEP, COL_SHIFT_2_START, COL_SHIFT_2_END, 2, sheet_name)
+    # ---------------- СЛОТЫ ----------------
+    slots_s1 = get_schedule_slots(
+        FILE_PATH, ROW_START, STEP,
+        COL_SHIFT_1_START, COL_SHIFT_1_END,
+        1, sheet_name
+    )
+    slots_s2 = get_schedule_slots(
+        FILE_PATH, ROW_START, STEP,
+        COL_SHIFT_2_START, COL_SHIFT_2_END,
+        2, sheet_name
+    )
 
     try:
         candidates_s1 = get_available_drivers(FILE_PATH, target_day, 1)
@@ -168,48 +175,68 @@ def run_planner(target_day, prev_day, route_number=None):
         print(e)
         return
 
-    # Исключаем отсутствующих водителей (теперь driver_scheduler сначала пытается брать их из БД)
+    # ---------------- ОТСУТСТВИЯ ----------------
     absent_s1 = _load_absent_drivers_for_day_shift(target_day, 1)
     absent_s2 = _load_absent_drivers_for_day_shift(target_day, 2)
-    if absent_s1:
-        candidates_s1 = [drv for drv in candidates_s1 if str(drv) not in absent_s1]
-    if absent_s2:
-        candidates_s2 = [drv for drv in candidates_s2 if str(drv) not in absent_s2]
+
+    candidates_s1 = [d for d in candidates_s1 if str(d) not in absent_s1]
+    candidates_s2 = [d for d in candidates_s2 if str(d) not in absent_s2]
 
     weekend_pool = []
     if ALLOW_WEEKEND_EXTRA_WORK:
         try:
             weekend_pool = get_weekend_drivers(FILE_PATH, target_day)
-        except ValueError as e:
-            print(f"[Предупреждение] Не удалось получить выходных водителей: {e}")
-            weekend_pool = []
+        except Exception as e:
+            print(f"[WARN] weekend drivers error: {e}")
 
-    print(f"[Спрос] маршрут {route_number}: 1 смена: {len(slots_s1)} нарядов, 2 смена: {len(slots_s2)} нарядов")
-    print(f"[Табель]   Доступно:          1 смена = {len(candidates_s1)}, 2 смена = {len(candidates_s2)}")
+    print(f"[Спрос] маршрут {route_number}: 1 смена={len(slots_s1)}, 2 смена={len(slots_s2)}")
+    print(f"[Табель] доступно: 1 смена={len(candidates_s1)}, 2 смена={len(candidates_s2)}")
 
-    output_file = os.path.join(OUTPUT_DIR, f"Расписание_Итог_{target_day}.xlsx")
-    if os.path.exists(output_file):
-        wb = load_workbook(output_file)
-    else:
-        wb = load_workbook(FILE_PATH)
-    ws = wb[sheet_name]
+    # ---------------- ПАПКА И ФАЙЛ ----------------
+    route_dir = os.path.join(OUTPUT_DIR, str(route_number))
+    os.makedirs(route_dir, exist_ok=True)
 
-    assigned_s1 = []
-    assigned_s2 = []
+    output_file = os.path.join(route_dir, f"Расписание_Итог_{target_day}.xlsx")
+
+    # template sheet name (тот, из которого мы ранее получали slots)
+    template_sheet_name = sheet_name  # sheet_name взят выше из SCHEDULE_SHEETS
+
+    # ЕСЛИ ФАЙЛА НЕТ — СОЗДАЁМ КОПИЮ ТОЛЬКО НУЖНОГО ЛИСТА И ПЕРЕИМЕНОВЫВАЕМ ЕГО В "Расписание"
+    if not os.path.exists(output_file):
+        wb_template = load_workbook(FILE_PATH)
+        if template_sheet_name not in wb_template.sheetnames:
+            print(f"Шаблонный лист '{template_sheet_name}' не найден в {FILE_PATH}")
+            return
+
+        # удаляем все листы кроме нужного
+        for name in wb_template.sheetnames[:]:
+            if name != template_sheet_name:
+                del wb_template[name]
+
+        # переименовываем оставшийся лист в "Расписание"
+        ws_temp = wb_template[template_sheet_name]
+        ws_temp.title = "Расписание"
+
+        wb_template.save(output_file)
+
+    # ОТКРЫВАЕМ ФАЙЛ РАСПИСАНИЯ (уже с единственным листом "Расписание")
+    wb = load_workbook(output_file)
+    ws = wb["Расписание"]
+
     assigned_today = set()
+    assigned_s1, assigned_s2 = [], []
 
-    # --- 1 смена ---
+    # ================== 1 СМЕНА ==================
     for slot in slots_s1:
         slot_start = slot['time_info']['start_dt']
-        chosen = choose_driver_for_slot(candidates_s1, history, slot_start, 1, assigned_today)
-        from_weekend = False
+        chosen = choose_driver_for_slot(
+            candidates_s1, history, slot_start, 1, assigned_today
+        )
 
-        if not chosen and ALLOW_WEEKEND_EXTRA_WORK and weekend_pool:
-            chosen = choose_driver_for_slot(weekend_pool, history, slot_start, 1, assigned_today)
-            if chosen:
-                from_weekend = True
-                if chosen in weekend_pool:
-                    weekend_pool.remove(chosen)
+        if not chosen and ALLOW_WEEKEND_EXTRA_WORK:
+            chosen = choose_driver_for_slot(
+                weekend_pool, history, slot_start, 1, assigned_today
+            )
 
         if not chosen:
             ws.cell(row=slot['excel_row'], column=COL_SHIFT_1_INSERT).value = "НЕТ_РЕЗЕРВА"
@@ -218,41 +245,26 @@ def run_planner(target_day, prev_day, route_number=None):
         ws.cell(row=slot['excel_row'], column=COL_SHIFT_1_INSERT).value = chosen
         info = slot['time_info'].copy()
         info['shift_code'] = 1
-        if from_weekend:
-            info['weekend_extra'] = True
         today_history_log[str(chosen)] = info
+
+        assigned_today.add(str(chosen))
         if chosen in candidates_s1:
             candidates_s1.remove(chosen)
         if chosen in candidates_s2:
             candidates_s2.remove(chosen)
         assigned_s1.append(chosen)
-        assigned_today.add(str(chosen))
 
-    # --- Резерв 1 смены ---
-    now = datetime.now().replace(second=0, microsecond=0)
-    for drv in list(candidates_s1):
-        if str(drv) in assigned_today:
-            continue
-        today_history_log[str(drv)] = {
-            'start_dt': now.replace(hour=5, minute=0),
-            'end_dt': now.replace(hour=17, minute=0),
-            'start_str': "05:00", 'end_str': "17:00",
-            'duration': 12.0, 'is_next_day': False,
-            'shift_code': 1, 'note': 'РЕЗЕРВ'
-        }
-
-    # --- 2 смена ---
+    # ================== 2 СМЕНА ==================
     for slot in slots_s2:
         slot_start = slot['time_info']['start_dt']
-        chosen = choose_driver_for_slot(candidates_s2, history, slot_start, 2, assigned_today)
-        from_weekend = False
+        chosen = choose_driver_for_slot(
+            candidates_s2, history, slot_start, 2, assigned_today
+        )
 
-        if not chosen and ALLOW_WEEKEND_EXTRA_WORK and weekend_pool:
-            chosen = choose_driver_for_slot(weekend_pool, history, slot_start, 2, assigned_today)
-            if chosen:
-                from_weekend = True
-                if chosen in weekend_pool:
-                    weekend_pool.remove(chosen)
+        if not chosen and ALLOW_WEEKEND_EXTRA_WORK:
+            chosen = choose_driver_for_slot(
+                weekend_pool, history, slot_start, 2, assigned_today
+            )
 
         if not chosen:
             ws.cell(row=slot['excel_row'], column=COL_SHIFT_2_INSERT).value = "НЕТ_РЕЗЕРВА"
@@ -261,39 +273,21 @@ def run_planner(target_day, prev_day, route_number=None):
         ws.cell(row=slot['excel_row'], column=COL_SHIFT_2_INSERT).value = chosen
         info = slot['time_info'].copy()
         info['shift_code'] = 2
-        if from_weekend:
-            info['weekend_extra'] = True
         today_history_log[str(chosen)] = info
+
+        assigned_today.add(str(chosen))
         if chosen in candidates_s2:
             candidates_s2.remove(chosen)
         if chosen in candidates_s1:
             candidates_s1.remove(chosen)
         assigned_s2.append(chosen)
-        assigned_today.add(str(chosen))
 
-    # --- Резерв 2 смены ---
-    for drv in list(candidates_s2):
-        if str(drv) in assigned_today:
-            continue
-        start_dt = now.replace(hour=15, minute=0)
-        end_dt = now.replace(hour=23, minute=59)
-        duration = round((end_dt - start_dt).total_seconds() / 3600, 1)
-        today_history_log[str(drv)] = {
-            'start_dt': start_dt,
-            'end_dt': end_dt,
-            'start_str': "15:00",
-            'end_str': "23:59",
-            'duration': duration,
-            'is_next_day': False,
-            'shift_code': 2,
-            'note': 'РЕЗЕРВ'
-        }
-
-    print(f"\n[Итог] маршрут {route_number}: Назначено: 1см={len(assigned_s1)}, 2см={len(assigned_s2)}")
-    print(f"[Итог] маршрут {route_number}: В резерве: 1см={len(candidates_s1)}, 2см={len(candidates_s2)}")
+    print(f"[Итог] маршрут {route_number}: назначено 1см={len(assigned_s1)}, 2см={len(assigned_s2)}")
 
     wb.save(output_file)
     save_history(target_day, today_history_log)
+
+
 
 
 if __name__ == "__main__":

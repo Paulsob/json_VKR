@@ -277,9 +277,7 @@ if (routeSelect) {
   lastLoadedDay = parseInt(day, 10);
   updateRouteHint();
 
-  const params = new URLSearchParams({ route: selectedRoute });
-
-  fetch(`/api/schedule/${day}?${params.toString()}`)
+  fetch(`/api/schedule/${day}/${selectedRoute}`)
     .then((response) => response.json())
     .then((data) => {
       if (!data || !data.success) {
@@ -434,27 +432,18 @@ function requestRecalculateIfNeeded(day) {
     return Promise.resolve();
   }
 
-  const body = JSON.stringify({
-    allow_weekend: true,
-    route: selectedRoute,
-  });
+  const routeSelect = document.getElementById("routeSelect");
+  const route = routeSelect ? routeSelect.value : selectedRoute;
 
   return fetch(`/api/recalculate/${day}`, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body,
-  })
-    .then((response) => {
-      if (!response.ok) {
-        console.error("Ошибка пересчета расписания:", response.statusText);
-      }
-    })
-    .catch((err) => {
-      console.error("Не удалось пересчитать расписание:", err);
-    });
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ route: route }),
+  }).catch(err => {
+    console.error("Не удалось пересчитать расписание:", err);
+  });
 }
+
 
 function updateRouteHint(scheduleType, routeNumber) {
   const hintEl = document.getElementById("routeHint");
