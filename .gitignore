@@ -15,7 +15,7 @@ __pycache__/
 *.env.*
 
 # Editors
-.vscode/
+ARCHIVE/.vscode/
 .idea/
 *.swp
 *.swo

@@ -1,1765 +1,317 @@
 {
-    "25160": {
+    "54786": {
         "start_str": "04:43",
         "end_str": "12:42",
         "duration": 7.98,
         "is_next_day": false,
         "shift_code": 1
     },
-    "25181": {
+    "9226": {
         "start_str": "04:57",
         "end_str": "11:56",
         "duration": 6.98,
         "is_next_day": false,
         "shift_code": 1
     },
-    "25186": {
+    "9063": {
         "start_str": "05:06",
         "end_str": "12:26",
         "duration": 7.33,
         "is_next_day": false,
         "shift_code": 1
     },
-    "25215": {
+    "9397": {
         "start_str": "05:07",
         "end_str": "13:13",
         "duration": 8.1,
         "is_next_day": false,
         "shift_code": 1
     },
-    "26564": {
+    "54630": {
         "start_str": "05:12",
         "end_str": "12:09",
         "duration": 6.95,
         "is_next_day": false,
         "shift_code": 1
     },
-    "26569": {
+    "9136": {
         "start_str": "05:30",
         "end_str": "12:56",
         "duration": 7.43,
         "is_next_day": false,
         "shift_code": 1
     },
-    "26607": {
+    "10808": {
         "start_str": "05:33",
         "end_str": "13:45",
         "duration": 8.2,
         "is_next_day": false,
         "shift_code": 1
     },
-    "26980": {
+    "11481": {
         "start_str": "05:55",
         "end_str": "13:29",
         "duration": 7.57,
         "is_next_day": false,
         "shift_code": 1
     },
-    "27833": {
+    "65119": {
         "start_str": "05:59",
         "end_str": "14:12",
         "duration": 8.22,
         "is_next_day": false,
         "shift_code": 1
     },
-    "30059": {
+    "54211": {
         "start_str": "06:12",
         "end_str": "14:24",
         "duration": 8.2,
         "is_next_day": false,
         "shift_code": 1
     },
-    "30527": {
+    "55002": {
         "start_str": "06:21",
         "end_str": "13:59",
         "duration": 7.63,
         "is_next_day": false,
         "shift_code": 1
     },
-    "60311": {
+    "11236": {
         "start_str": "07:34",
         "end_str": "16:00",
         "duration": 8.43,
         "is_next_day": false,
         "shift_code": 1
     },
-    "60455": {
+    "11629": {
         "start_str": "07:47",
         "end_str": "16:15",
         "duration": 8.47,
         "is_next_day": false,
         "shift_code": 1
     },
-    "60461": {
+    "54767": {
         "start_str": "08:00",
         "end_str": "15:46",
         "duration": 7.77,
         "is_next_day": false,
         "shift_code": 1
     },
-    "25184": {
+    "10480": {
         "start_str": "08:03",
         "end_str": "15:30",
         "duration": 7.45,
         "is_next_day": false,
         "shift_code": 1
     },
-    "25285": {
+    "54467": {
         "start_str": "08:13",
         "end_str": "16:50",
         "duration": 8.62,
         "is_next_day": false,
         "shift_code": 1
     },
-    "26554": {
+    "10572": {
         "start_str": "08:38",
         "end_str": "17:13",
         "duration": 8.58,
         "is_next_day": false,
         "shift_code": 1
     },
-    "27055": {
+    "54821": {
         "start_str": "08:44",
         "end_str": "16:31",
         "duration": 7.78,
         "is_next_day": false,
         "shift_code": 1
     },
-    "27167": {
+    "65298": {
         "start_str": "08:51",
         "end_str": "17:27",
         "duration": 8.6,
         "is_next_day": false,
         "shift_code": 1
     },
-    "27251": {
+    "11058": {
         "start_str": "09:06",
         "end_str": "17:41",
         "duration": 8.58,
         "is_next_day": false,
         "shift_code": 1
     },
-    "27269": {
+    "65086": {
         "start_str": "09:10",
         "end_str": "17:01",
         "duration": 7.85,
         "is_next_day": false,
         "shift_code": 1
     },
-    "27407": {
+    "9341": {
         "start_str": "09:21",
         "end_str": "17:55",
         "duration": 8.57,
         "is_next_day": false,
         "shift_code": 1
     },
-    "20607": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "21809": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "23053": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "25158": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "25165": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "25166": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "25201": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "25232": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "25244": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "25923": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "26018": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "26101": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "26105": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "26116": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "26160": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "26161": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "26221": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "26239": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "26439": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "26663": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "26692": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "26826": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "26873": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "26938": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "26942": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "26960": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "27106": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "27420": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "27470": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "27736": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "27760": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "27767": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "27852": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "27868": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "27940": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "27990": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "29290": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "29721": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "30093": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "30312": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "30381": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "30425": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "30592": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "30660": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "30819": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "30827": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "30833": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "32435": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "37098": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "37251": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "37466": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60053": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60065": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60079": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60110": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60137": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60152": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60189": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60234": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60249": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60281": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60282": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60312": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60314": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60322": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60365": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60373": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60375": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60379": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60389": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60400": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60422": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60427": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60432": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60438": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60445": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60451": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60452": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60458": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60471": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60485": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60486": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60492": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60497": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60546": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60547": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60566": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60634": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60639": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60715": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60831": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60843": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60846": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60849": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60851": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "60861": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "73027": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "73032": {
-        "start_str": "05:00",
-        "end_str": "17:00",
-        "duration": 12.0,
-        "is_next_day": false,
-        "shift_code": 1,
-        "note": "РЕЗЕРВ"
-    },
-    "27182": {
+    "54794": {
         "start_str": "12:42",
         "end_str": "21:33",
         "duration": 8.85,
         "is_next_day": false,
         "shift_code": 2
     },
-    "25180": {
+    "54935": {
         "start_str": "11:56",
         "end_str": "20:54",
         "duration": 8.97,
         "is_next_day": false,
         "shift_code": 2
     },
-    "29592": {
+    "12258": {
         "start_str": "12:26",
         "end_str": "20:36",
         "duration": 8.17,
         "is_next_day": false,
         "shift_code": 2
     },
-    "25207": {
+    "9332": {
         "start_str": "13:13",
         "end_str": "21:59",
         "duration": 8.77,
         "is_next_day": false,
         "shift_code": 2
     },
-    "25224": {
+    "11620": {
         "start_str": "12:09",
         "end_str": "21:06",
         "duration": 8.95,
         "is_next_day": false,
         "shift_code": 2
     },
-    "29748": {
+    "10075": {
         "start_str": "12:56",
         "end_str": "21:02",
         "duration": 8.1,
         "is_next_day": false,
         "shift_code": 2
     },
-    "25234": {
+    "54437": {
         "start_str": "13:45",
         "end_str": "22:23",
         "duration": 8.63,
         "is_next_day": false,
         "shift_code": 2
     },
-    "26532": {
+    "54543": {
         "start_str": "13:29",
         "end_str": "21:33",
         "duration": 8.07,
         "is_next_day": false,
         "shift_code": 2
     },
-    "26615": {
+    "54322": {
         "start_str": "14:12",
         "end_str": "21:59",
         "duration": 7.78,
         "is_next_day": false,
         "shift_code": 2
     },
-    "27008": {
+    "11924": {
         "start_str": "14:24",
         "end_str": "22:11",
         "duration": 7.78,
         "is_next_day": false,
         "shift_code": 2
     },
-    "29869": {
+    "7048": {
         "start_str": "13:59",
         "end_str": "21:58",
         "duration": 7.98,
         "is_next_day": false,
         "shift_code": 2
     },
-    "30015": {
+    "10485": {
         "start_str": "16:00",
         "end_str": "00:26",
         "duration": 8.43,
         "is_next_day": true,
         "shift_code": 2
     },
-    "60366": {
+    "54690": {
         "start_str": "16:15",
         "end_str": "00:39",
         "duration": 8.4,
         "is_next_day": true,
         "shift_code": 2
     },
-    "60425": {
+    "11735": {
         "start_str": "15:46",
         "end_str": "23:38",
         "duration": 7.87,
         "is_next_day": false,
         "shift_code": 2
     },
-    "60426": {
+    "9301": {
         "start_str": "15:30",
         "end_str": "00:00",
         "duration": 8.5,
         "is_next_day": true,
         "shift_code": 2
     },
-    "60456": {
+    "54231": {
         "start_str": "16:50",
         "end_str": "01:05",
         "duration": 8.25,
         "is_next_day": true,
         "shift_code": 2
     },
-    "60463": {
+    "6219": {
         "start_str": "17:13",
         "end_str": "01:31",
         "duration": 8.3,
         "is_next_day": true,
         "shift_code": 2
     },
-    "60479": {
+    "9354": {
         "start_str": "16:31",
         "end_str": "00:16",
         "duration": 7.75,
         "is_next_day": true,
         "shift_code": 2
     },
-    "25252": {
+    "9173": {
         "start_str": "17:27",
         "end_str": "01:44",
         "duration": 8.28,
         "is_next_day": true,
         "shift_code": 2
     },
-    "27426": {
+    "9305": {
         "start_str": "17:41",
         "end_str": "01:05",
         "duration": 7.4,
         "is_next_day": true,
         "shift_code": 2
     },
-    "27881": {
+    "54598": {
         "start_str": "17:01",
         "end_str": "00:43",
         "duration": 7.7,
         "is_next_day": true,
         "shift_code": 2
     },
-    "26611": {
+    "11316": {
         "start_str": "17:55",
         "end_str": "01:18",
         "duration": 7.38,
         "is_next_day": true,
         "shift_code": 2
     },
-    "27404": {
+    "54020": {
         "start_str": "13:30",
         "end_str": "21:48",
         "duration": 8.3,
         "is_next_day": false,
         "shift_code": 2
-    },
-    "20043": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "20568": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "23072": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "23277": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "25190": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "25243": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "25727": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "26275": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "26304": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "26319": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "26653": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "26670": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "26698": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "26766": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "26954": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "27056": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "27058": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "27157": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "27248": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "27315": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "27432": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "27440": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "27581": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "27950": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "27978": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "27995": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "28267": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "29267": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "29928": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "29929": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "30073": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "30149": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "30588": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "30894": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "32947": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "57779": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60038": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60039": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60089": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60097": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60133": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60143": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60211": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60237": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60247": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60267": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60280": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60360": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60382": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60413": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60431": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60441": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60449": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60454": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60459": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60468": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60472": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60473": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60474": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60476": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60481": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60484": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60493": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60494": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60498": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60500": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60502": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60505": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60517": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60520": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60526": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60533": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60553": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60638": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60659": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60734": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60735": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60810": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60835": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60845": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "60860": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "73434": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
-    },
-    "73547": {
-        "start_str": "15:00",
-        "end_str": "23:59",
-        "duration": 9.0,
-        "is_next_day": false,
-        "shift_code": 2,
-        "note": "РЕЗЕРВ"
     }
 }

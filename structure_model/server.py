@@ -261,9 +261,9 @@ def api_schedule(day, route):
             "Номер маршрута",
             "Отправление 1 смена",
             "Прибытие 1 смена",
+            "Водитель 1 смена",
             "Отправление 2 смена",
             "Прибытие 2 смена",
-            "Водитель 1 смена",
             "Водитель 2 смена",
         ]
     })
@@ -273,10 +273,25 @@ def api_schedule(day, route):
 # ======================== ОТЧЁТ =========================
 # =========================================================
 
+from flask import send_file
+import os
+
+
 @app.route('/get-report')
 def get_report():
-    filename = "Отчет_Нагрузки_Дни_1_по_30.xlsx"
-    return send_from_directory(OUTPUT_DIR, filename, as_attachment=True)
+    # Берём корень проекта относительно этого файла
+    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+    # Полный путь к файлу отчёта
+    path = os.path.join(base_dir, "output", "Отчет_Нагрузки_Дни_1_по_30.xlsx")
+
+    print("Полный путь к файлу:", path)
+    print("Файл существует?", os.path.exists(path))
+
+    if not os.path.exists(path):
+        return "Отчет не найден", 404
+
+    return send_file(path, as_attachment=True)
 
 
 # =========================================================

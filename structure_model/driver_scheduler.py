@@ -128,8 +128,11 @@ def choose_driver_for_slot(candidates, history_data, target_shift_start_dt, shif
 
 def run_planner(target_day, prev_day, route_number=None):
     """
-    Планировщик на один день для одного маршрута
+    Планировщик на один день для одного маршрута.
+    Источник водителей — consolidation/{route_number}/data.json
+    В Excel пишется ТОЛЬКО табельный номер.
     """
+
     if route_number is None:
         route_number = ROUTE_NUMBER
 
@@ -168,29 +171,55 @@ def run_planner(target_day, prev_day, route_number=None):
         2, sheet_name
     )
 
-    try:
-        candidates_s1 = get_available_drivers(FILE_PATH, target_day, 1)
-        candidates_s2 = get_available_drivers(FILE_PATH, target_day, 2)
-    except ValueError as e:
-        print(e)
+    # ============================================================
+    # ЗАГРУЗКА CONSOLIDATION (ОСНОВНОЙ ИСТОЧНИК ВОДИТЕЛЕЙ)
+    # ============================================================
+
+    from pathlib import Path
+
+    BASE_DIR = Path(__file__).resolve().parent.parent
+    consol_file = BASE_DIR / "consolidation" / str(route_number) / "data.json"
+
+    if not consol_file.exists():
+        print(f"[ОШИБКА] Не найден consolidation для маршрута {route_number}: {consol_file}")
         return
+
+    try:
+        with open(consol_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            route_drivers = {
+                str(e["tab_number"]).strip()
+                for e in data.get("employees", [])
+                if e.get("tab_number") is not None
+            }
+    except Exception as e:
+        print(f"[ОШИБКА] Не удалось прочитать consolidation: {e}")
+        return
+
+    if not route_drivers:
+        print(f"[ОШИБКА] В consolidation пустой список водителей для маршрута {route_number}")
+        return
+
+    # ---------------- БАЗОВЫЕ ПУЛЫ (по сменам) ----------------
+    # теперь это просто копии одного и того же пула маршрута
+
+    candidates_s1 = set(route_drivers)
+    candidates_s2 = set(route_drivers)
 
     # ---------------- ОТСУТСТВИЯ ----------------
     absent_s1 = _load_absent_drivers_for_day_shift(target_day, 1)
     absent_s2 = _load_absent_drivers_for_day_shift(target_day, 2)
 
-    candidates_s1 = [d for d in candidates_s1 if str(d) not in absent_s1]
-    candidates_s2 = [d for d in candidates_s2 if str(d) not in absent_s2]
+    candidates_s1 -= set(absent_s1)
+    candidates_s2 -= set(absent_s2)
 
-    weekend_pool = []
+    # ---------------- ВЫХОДНОЙ РЕЗЕРВ ----------------
+    weekend_pool = set()
     if ALLOW_WEEKEND_EXTRA_WORK:
-        try:
-            weekend_pool = get_weekend_drivers(FILE_PATH, target_day)
-        except Exception as e:
-            print(f"[WARN] weekend drivers error: {e}")
+        weekend_pool = set(route_drivers)
 
     print(f"[Спрос] маршрут {route_number}: 1 смена={len(slots_s1)}, 2 смена={len(slots_s2)}")
-    print(f"[Табель] доступно: 1 смена={len(candidates_s1)}, 2 смена={len(candidates_s2)}")
+    print(f"[Табель] доступно после фильтров: 1 смена={len(candidates_s1)}, 2 смена={len(candidates_s2)}")
 
     # ---------------- ПАПКА И ФАЙЛ ----------------
     route_dir = os.path.join(OUTPUT_DIR, str(route_number))
@@ -198,28 +227,25 @@ def run_planner(target_day, prev_day, route_number=None):
 
     output_file = os.path.join(route_dir, f"Расписание_Итог_{target_day}.xlsx")
 
-    # template sheet name (тот, из которого мы ранее получали slots)
-    template_sheet_name = sheet_name  # sheet_name взят выше из SCHEDULE_SHEETS
+    # ---------------- ШАБЛОН ----------------
+    # Загружаем шаблон всегда заново
+    wb_template = load_workbook(FILE_PATH)
+    if sheet_name not in wb_template.sheetnames:
+        print(f"Шаблонный лист '{sheet_name}' не найден")
+        return
 
-    # ЕСЛИ ФАЙЛА НЕТ — СОЗДАЁМ КОПИЮ ТОЛЬКО НУЖНОГО ЛИСТА И ПЕРЕИМЕНОВЫВАЕМ ЕГО В "Расписание"
-    if not os.path.exists(output_file):
-        wb_template = load_workbook(FILE_PATH)
-        if template_sheet_name not in wb_template.sheetnames:
-            print(f"Шаблонный лист '{template_sheet_name}' не найден в {FILE_PATH}")
-            return
+    # Удаляем все листы кроме нужного
+    for name in wb_template.sheetnames[:]:
+        if name != sheet_name:
+            del wb_template[name]
 
-        # удаляем все листы кроме нужного
-        for name in wb_template.sheetnames[:]:
-            if name != template_sheet_name:
-                del wb_template[name]
+    ws_temp = wb_template[sheet_name]
+    ws_temp.title = "Расписание"
 
-        # переименовываем оставшийся лист в "Расписание"
-        ws_temp = wb_template[template_sheet_name]
-        ws_temp.title = "Расписание"
+    # Сохраняем итоговый файл заново, чтобы перезаписать старый
+    wb_template.save(output_file)
 
-        wb_template.save(output_file)
-
-    # ОТКРЫВАЕМ ФАЙЛ РАСПИСАНИЯ (уже с единственным листом "Расписание")
+    # Загружаем его для дальнейшей записи табельных номеров
     wb = load_workbook(output_file)
     ws = wb["Расписание"]
 
@@ -228,7 +254,8 @@ def run_planner(target_day, prev_day, route_number=None):
 
     # ================== 1 СМЕНА ==================
     for slot in slots_s1:
-        slot_start = slot['time_info']['start_dt']
+        slot_start = slot["time_info"]["start_dt"]
+
         chosen = choose_driver_for_slot(
             candidates_s1, history, slot_start, 1, assigned_today
         )
@@ -239,24 +266,24 @@ def run_planner(target_day, prev_day, route_number=None):
             )
 
         if not chosen:
-            ws.cell(row=slot['excel_row'], column=COL_SHIFT_1_INSERT).value = "НЕТ_РЕЗЕРВА"
+            ws.cell(row=slot["excel_row"], column=COL_SHIFT_1_INSERT).value = "НЕТ_РЕЗЕРВА"
             continue
 
-        ws.cell(row=slot['excel_row'], column=COL_SHIFT_1_INSERT).value = chosen
-        info = slot['time_info'].copy()
-        info['shift_code'] = 1
-        today_history_log[str(chosen)] = info
+        ws.cell(row=slot["excel_row"], column=COL_SHIFT_1_INSERT).value = chosen
 
-        assigned_today.add(str(chosen))
-        if chosen in candidates_s1:
-            candidates_s1.remove(chosen)
-        if chosen in candidates_s2:
-            candidates_s2.remove(chosen)
+        info = slot["time_info"].copy()
+        info["shift_code"] = 1
+        today_history_log[chosen] = info
+
+        assigned_today.add(chosen)
+        candidates_s1.discard(chosen)
+        candidates_s2.discard(chosen)
         assigned_s1.append(chosen)
 
     # ================== 2 СМЕНА ==================
     for slot in slots_s2:
-        slot_start = slot['time_info']['start_dt']
+        slot_start = slot["time_info"]["start_dt"]
+
         chosen = choose_driver_for_slot(
             candidates_s2, history, slot_start, 2, assigned_today
         )
@@ -267,25 +294,25 @@ def run_planner(target_day, prev_day, route_number=None):
             )
 
         if not chosen:
-            ws.cell(row=slot['excel_row'], column=COL_SHIFT_2_INSERT).value = "НЕТ_РЕЗЕРВА"
+            ws.cell(row=slot["excel_row"], column=COL_SHIFT_2_INSERT).value = "НЕТ_РЕЗЕРВА"
             continue
 
-        ws.cell(row=slot['excel_row'], column=COL_SHIFT_2_INSERT).value = chosen
-        info = slot['time_info'].copy()
-        info['shift_code'] = 2
-        today_history_log[str(chosen)] = info
+        ws.cell(row=slot["excel_row"], column=COL_SHIFT_2_INSERT).value = chosen
 
-        assigned_today.add(str(chosen))
-        if chosen in candidates_s2:
-            candidates_s2.remove(chosen)
-        if chosen in candidates_s1:
-            candidates_s1.remove(chosen)
+        info = slot["time_info"].copy()
+        info["shift_code"] = 2
+        today_history_log[chosen] = info
+
+        assigned_today.add(chosen)
+        candidates_s2.discard(chosen)
+        candidates_s1.discard(chosen)
         assigned_s2.append(chosen)
 
     print(f"[Итог] маршрут {route_number}: назначено 1см={len(assigned_s1)}, 2см={len(assigned_s2)}")
 
     wb.save(output_file)
     save_history(target_day, today_history_log)
+
 
 
 

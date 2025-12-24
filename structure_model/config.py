@@ -2,7 +2,12 @@ import os
 
 HISTORY_JSON_DIR = "history_json"
 OUTPUT_DIR = "output"
-FILE_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data.xlsx")
+
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+FILE_PATH = BASE_DIR / "data" / "data.xlsx"
+
 
 os.makedirs(HISTORY_JSON_DIR, exist_ok=True)
 os.makedirs(OUTPUT_DIR, exist_ok=True)
