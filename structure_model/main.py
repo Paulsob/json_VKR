@@ -1,5 +1,5 @@
 from structure_model.config import TOTAL_DAYS_IN_MONTH, FILE_PATH, HISTORY_JSON_DIR
-from structure_model.driver_scheduler import run_planner
+from structure_model.driver_scheduler import run_planner, run_planner_for_all_routes
 from structure_model.report_generator import generate_work_summary
 import os
 from structure_model.summary_report import write_summary_statistics
@@ -14,7 +14,7 @@ def auto_run_simulation(total_days, file_path):
 
     for day in range(1, total_days + 1):
         print(f"ЗАПУСК ДНЯ {day:02d}")
-        run_planner(day, day - 1)
+        run_planner_for_all_routes(day, day - 1)
 
     print("\n##################### СИМУЛЯЦИЯ ЗАВЕРШЕНА #####################")
     generate_work_summary(total_days, file_path)
