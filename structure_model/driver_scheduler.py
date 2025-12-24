@@ -288,6 +288,30 @@ def run_planner(target_day, prev_day, route_number=None):
     save_history(target_day, today_history_log)
 
 
+def run_planner_for_all_routes(target_day, prev_day, routes_file_path="/workspace/consolidation/route_numbers.txt"):
+    """
+    Планировщик на один день для всех маршрутов из файла routes_file_path
+    """
+    # Загружаем номера маршрутов из файла в папке consolidation
+    try:
+        with open(routes_file_path, 'r', encoding='utf-8') as f:
+            route_numbers = []
+            for line in f:
+                line = line.strip()
+                if line and line.isdigit():
+                    route_numbers.append(int(line))
+    except FileNotFoundError:
+        print(f"Файл с маршрутами не найден: {routes_file_path}")
+        print("Используем маршруты из конфига по умолчанию")
+        # Извлекаем номера маршрутов из SCHEDULE_SHEETS
+        route_numbers = list(set([key[0] for key in SCHEDULE_SHEETS.keys()]))
+    
+    print(f"Обработка маршрутов: {route_numbers}")
+    
+    for route_number in route_numbers:
+        run_planner(target_day, prev_day, route_number)
+
+
 
 
 if __name__ == "__main__":

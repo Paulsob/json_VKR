@@ -1,22 +1,48 @@
-```
+```gitignore
 # Python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 
-# Logs and temp files
+# Excel files (from output directories)
+output/*.xlsx
+test_output/*.xlsx
+
+# History JSON files
+history_json/*.json
+
+# Logs
 *.log
-*.tmp
 
 # Environment
 .env
 .env.local
-*.env.*
+.env.*
 
-# Editors
+# Dependencies
+venv/
+.venv/
+env/
+.ENV/
+
+# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Coverage
+.coverage
+htmlcov/
+coverage/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
 ```
