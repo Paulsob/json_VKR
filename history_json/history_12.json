@@ -1,0 +1,100 @@
+{
+    "11832": {
+        "start_str": "05:01",
+        "end_str": "13:58",
+        "duration": 8.95,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "65158": {
+        "start_str": "05:11",
+        "end_str": "13:37",
+        "duration": 8.43,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "10325": {
+        "start_str": "05:14",
+        "end_str": "14:43",
+        "duration": 9.48,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "55383": {
+        "start_str": "05:21",
+        "end_str": "13:52",
+        "duration": 8.52,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "21479": {
+        "start_str": "05:25",
+        "end_str": "13:14",
+        "duration": 7.82,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "11355": {
+        "start_str": "05:31",
+        "end_str": "13:43",
+        "duration": 8.2,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "65035": {
+        "start_str": "05:36",
+        "end_str": "15:07",
+        "duration": 9.52,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "11449": {
+        "start_str": "05:41",
+        "end_str": "14:17",
+        "duration": 8.6,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "54766": {
+        "start_str": "05:48",
+        "end_str": "13:33",
+        "duration": 7.75,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "54865": {
+        "start_str": "05:51",
+        "end_str": "14:05",
+        "duration": 8.23,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "25914": {
+        "start_str": "06:00",
+        "end_str": "15:31",
+        "duration": 9.52,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "65331": {
+        "start_str": "16:17",
+        "end_str": "01:06",
+        "duration": 8.82,
+        "is_next_day": true,
+        "shift_code": 2
+    },
+    "65152": {
+        "start_str": "13:37",
+        "end_str": "22:28",
+        "duration": 8.85,
+        "is_next_day": false,
+        "shift_code": 2
+    },
+    "37541": {
+        "start_str": "14:43",
+        "end_str": "22:12",
+        "duration": 7.48,
+        "is_next_day": false,
+        "shift_code": 2
+    }
+}

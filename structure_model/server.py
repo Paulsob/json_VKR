@@ -1,32 +1,27 @@
-from flask import Flask, render_template, request, jsonify, send_from_directory
+from flask import Flask, render_template, request, jsonify, send_file
 import os
 import json
 import pandas as pd
 import datetime
+from pathlib import Path
 
 from structure_model.config import (
-    OUTPUT_DIR,
-    HISTORY_JSON_DIR,
+    TRANSPORT_CONFIGS,
+    BASE_DIR,
     TOTAL_DAYS_IN_MONTH,
     FILE_PATH,
-    TAB_SHEET_NAME,
     COL_SHIFT_1_INSERT,
     COL_SHIFT_2_INSERT,
-    SCHEDULE_SHEETS,
+    ABSENCES_FILE
 )
-from structure_model.driver_scheduler import run_planner as run_planner_for_day
-
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+from structure_model.driver_scheduler import run_planner as run_planner_for_day, get_all_routes
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'json-only-version'
 
-ABSENCES_FILE = os.path.join(OUTPUT_DIR, "real_absences.json")
-
 # =========================================================
-# =============== ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ==================
+# Вспомогательные функции
 # =========================================================
-
 def load_absences():
     if not os.path.exists(ABSENCES_FILE):
         return []
@@ -43,15 +38,14 @@ def save_absences(data):
 
 
 # =========================================================
-# ======================= DASHBOARD =======================
+# DASHBOARD
 # =========================================================
-
 @app.route('/')
 def dashboard():
-    report_path = os.path.join(OUTPUT_DIR, "Отчет_Нагрузки_Дни_1_по_30.xlsx")
+    report_path = BASE_DIR / "output" / "Отчет_Нагрузки_Дни_1_по_30.xlsx"
     base_count = 0
 
-    if os.path.exists(report_path):
+    if report_path.exists():
         df = pd.read_excel(report_path, index_col=0)
         base_count = len(df)
 
@@ -70,33 +64,33 @@ def dashboard():
 
 
 # =========================================================
-# ===================== КАЛЕНДАРЬ =========================
+# КАЛЕНДАРЬ
 # =========================================================
-
 @app.route('/calendar-data')
 def calendar_data():
     days_with_schedules = set()
 
-    if not os.path.exists(OUTPUT_DIR):
-        return jsonify([])
-
-    for entry in os.listdir(OUTPUT_DIR):
-        route_path = os.path.join(OUTPUT_DIR, entry)
-        if not os.path.isdir(route_path):
+    # Обходим все output-каталоги по транспортам
+    for cfg in TRANSPORT_CONFIGS.values():
+        output_root: Path = Path(cfg["output_dir"])
+        if not output_root.exists():
             continue
 
-        for day in range(1, TOTAL_DAYS_IN_MONTH + 1):
-            fname = f"Расписание_Итог_{day}.xlsx"
-            if os.path.exists(os.path.join(route_path, fname)):
-                days_with_schedules.add(day)
+        for entry in os.listdir(output_root):
+            route_path = output_root / entry
+            if not route_path.is_dir():
+                continue
+            for day in range(1, TOTAL_DAYS_IN_MONTH + 1):
+                fname = f"Расписание_Итог_{day}.xlsx"
+                if (route_path / fname).exists():
+                    days_with_schedules.add(day)
 
     return jsonify(sorted(days_with_schedules))
 
 
 # =========================================================
-# ==================== ОТСУТСТВИЯ =========================
+# ОТСУТСТВИЯ
 # =========================================================
-
 @app.route('/submit-absence', methods=['POST'])
 def submit_absence():
     data = request.json
@@ -114,8 +108,12 @@ def submit_absence():
     day = int(data.get("day"))
     prev_day = max(day - 1, 0)
 
-    for route_number in sorted({k[0] for k in SCHEDULE_SHEETS.keys()}):
-        run_planner_for_day(day, prev_day, route_number)
+    # Пересчёт для всех маршрутов всех типов (можно оптимизировать)
+    for transport, cfg in TRANSPORT_CONFIGS.items():
+        sheets = cfg["sheets"]
+        routes = sorted({k[0] for k in sheets.keys()})
+        for route_number in routes:
+            run_planner_for_day(day, prev_day, route_number, transport)
 
     return jsonify({"success": True})
 
@@ -134,8 +132,11 @@ def delete_absence():
     save_absences(absences)
 
     prev_day = max(day - 1, 0)
-    for route_number in sorted({k[0] for k in SCHEDULE_SHEETS.keys()}):
-        run_planner_for_day(day, prev_day, route_number)
+    for transport, cfg in TRANSPORT_CONFIGS.items():
+        sheets = cfg["sheets"]
+        routes = sorted({k[0] for k in sheets.keys()})
+        for route_number in routes:
+            run_planner_for_day(day, prev_day, route_number, transport)
 
     return jsonify({"success": True})
 
@@ -150,9 +151,8 @@ def get_real_absences():
 
 
 # =========================================================
-# ===================== ПЕРЕСЧЁТ ==========================
+# ПЕРЕСЧЁТ
 # =========================================================
-
 @app.route('/api/recalculate/<int:day>', methods=['POST'])
 def api_recalculate(day):
     if day < 1 or day > TOTAL_DAYS_IN_MONTH:
@@ -160,42 +160,94 @@ def api_recalculate(day):
 
     data = request.get_json(silent=True) or {}
     route = data.get("route")
+    transport = data.get("transport")  # optional: "bus" | "obus" | "tram"
 
     prev_day = max(day - 1, 0)
 
     if route is None:
-        run_planner_for_day(day, prev_day)
+        # пересчёт для всех маршрутов (возможно ограничить транспорт)
+        if transport:
+            sheets = TRANSPORT_CONFIGS.get(transport, {}).get("sheets", {})
+            for route_number in sorted({k[0] for k in sheets.keys()}):
+                run_planner_for_day(day, prev_day, route_number, transport)
+        else:
+            for t, cfg in TRANSPORT_CONFIGS.items():
+                sheets = cfg["sheets"]
+                for route_number in sorted({k[0] for k in sheets.keys()}):
+                    run_planner_for_day(day, prev_day, route_number, t)
     else:
-        run_planner_for_day(day, prev_day, int(route))
+        # пересчёт конкретного маршрута (с учётом типа транспорта)
+        route_number = int(route)
+        if transport:
+            run_planner_for_day(day, prev_day, route_number, transport)
+        else:
+            # пытаемся угадать транспорт по SCHEDULE_SHEETS
+            found = False
+            for t, cfg in TRANSPORT_CONFIGS.items():
+                if (route_number, True) in cfg["sheets"] or (route_number, False) in cfg["sheets"]:
+                    run_planner_for_day(day, prev_day, route_number, t)
+                    found = True
+            if not found:
+                # fallback: запустить для всех (маловероятно)
+                for t in TRANSPORT_CONFIGS.keys():
+                    run_planner_for_day(day, prev_day, route_number, t)
 
     return jsonify({"success": True})
 
 
 # =========================================================
-# ===================== МАРШРУТЫ ==========================
+# МАРШРУТЫ
 # =========================================================
-
 @app.route('/api/routes')
 def api_routes():
-    routes = sorted({k[0] for k in SCHEDULE_SHEETS.keys()})
-    return jsonify(routes)
+    """
+    Возвращает список маршрутов с указанием типа транспорта:
+    [{ "route": 55, "transport": "bus" }, ...]
+    """
+    out = []
+    for transport, cfg in TRANSPORT_CONFIGS.items():
+        for (r, _) in cfg["sheets"].keys():
+            out.append({"route": int(r), "transport": transport})
+    # сортируем по номеру и по транспорту
+    out = sorted(out, key=lambda x: (x["route"], x["transport"]))
+    return jsonify(out)
 
 
 # =========================================================
-# ==================== РАСПИСАНИЕ =========================
+# РАСПИСАНИЕ
 # =========================================================
-
 @app.route('/api/schedule/<int:day>/<int:route>')
 def api_schedule(day, route):
     if day < 1 or day > TOTAL_DAYS_IN_MONTH:
         return jsonify({'error': 'Некорректный день'}), 400
 
+    # optional query param ?transport=obus
+    transport = request.args.get("transport", None)
+
+    # определяем транспорт (если не задан)
+    selected_transport = None
+    if transport:
+        selected_transport = transport if transport in TRANSPORT_CONFIGS else None
+    else:
+        for t, cfg in TRANSPORT_CONFIGS.items():
+            if (route, True) in cfg["sheets"] or (route, False) in cfg["sheets"]:
+                selected_transport = t
+                break
+
+    if not selected_transport:
+        return jsonify({'error': f'Маршрут {route} не найден ни для одного транспорта'}), 400
+
+    cfg = TRANSPORT_CONFIGS[selected_transport]
+    sheets = cfg["sheets"]
+    output_root: Path = Path(cfg["output_dir"])
+
+    # weekend detection
     current_date = datetime.date.today().replace(day=day)
     is_weekend = current_date.weekday() >= 5
 
-    sheet_name = SCHEDULE_SHEETS.get((route, is_weekend))
+    sheet_name = sheets.get((route, is_weekend))
     if not sheet_name:
-        return jsonify({'error': f'Маршрут {route} не найден'}), 400
+        return jsonify({'error': f'Маршрут {route} не найден для транспорта {selected_transport}'}), 400
 
     # ---------- читаем базовое расписание ----------
     if is_weekend:
@@ -203,9 +255,9 @@ def api_schedule(day, route):
     else:
         filename = f"Расписание_рабочего_дня_{route}.xlsx"
 
-    filepath = os.path.join(OUTPUT_DIR, filename)
-    if not os.path.exists(filepath):
-        return jsonify({'error': f'Файл {filename} не найден'}), 404
+    filepath = output_root / filename
+    if not filepath.exists():
+        return jsonify({'error': f'Файл {filename} не найден в {output_root}'}), 404
 
     df = pd.read_excel(filepath, sheet_name="Лист1", header=None)
 
@@ -213,13 +265,9 @@ def api_schedule(day, route):
     drivers_s1 = {}
     drivers_s2 = {}
 
-    itog_path = os.path.join(
-        OUTPUT_DIR,
-        str(route),
-        f"Расписание_Итог_{day}.xlsx"
-    )
+    itog_path = output_root / str(route) / f"Расписание_Итог_{day}.xlsx"
 
-    if os.path.exists(itog_path):
+    if itog_path.exists():
         try:
             itog_df = pd.read_excel(itog_path, sheet_name="Расписание", header=None)
 
@@ -229,12 +277,12 @@ def api_schedule(day, route):
             for idx in range(len(itog_df)):
                 if col1 < itog_df.shape[1]:
                     v1 = itog_df.iat[idx, col1]
-                    if v1 and str(v1).strip() != "НЕТ_РЕЗЕРВА":
+                    if v1 and str(v1).strip() != "НЕТ_РЕЗЕРВА" and str(v1).strip() != "НЕТ":
                         drivers_s1[idx] = str(v1).strip()
 
                 if col2 < itog_df.shape[1]:
                     v2 = itog_df.iat[idx, col2]
-                    if v2 and str(v2).strip() != "НЕТ_РЕЗЕРВА":
+                    if v2 and str(v2).strip() != "НЕТ_РЕЗЕРВА" and str(v2).strip() != "НЕТ":
                         drivers_s2[idx] = str(v2).strip()
 
         except Exception as e:
@@ -255,6 +303,7 @@ def api_schedule(day, route):
         "success": True,
         "day": day,
         "route": route,
+        "transport": selected_transport,
         "is_weekend": is_weekend,
         "rows": rows,
         "columns": [
@@ -270,31 +319,22 @@ def api_schedule(day, route):
 
 
 # =========================================================
-# ======================== ОТЧЁТ =========================
+# ОТЧЁТ
 # =========================================================
-
-from flask import send_file
-import os
-
-
 @app.route('/get-report')
 def get_report():
     # Берём корень проекта относительно этого файла
-    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-
-    # Полный путь к файлу отчёта
-    path = os.path.join(base_dir, "output", "Отчет_Нагрузки_Дни_1_по_30.xlsx")
+    path = BASE_DIR / "output" / "Отчет_Нагрузки_Дни_1_по_30.xlsx"
 
     print("Полный путь к файлу:", path)
-    print("Файл существует?", os.path.exists(path))
+    print("Файл существует?", path.exists())
 
-    if not os.path.exists(path):
+    if not path.exists():
         return "Отчет не найден", 404
 
     return send_file(path, as_attachment=True)
 
 
 # =========================================================
-
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

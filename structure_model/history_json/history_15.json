@@ -1,485 +1,72 @@
 {
-    "54786": {
-        "start_str": "04:39",
-        "end_str": "11:23",
-        "duration": 6.73,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "54767": {
-        "start_str": "04:46",
-        "end_str": "12:13",
-        "duration": 7.45,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "12258": {
-        "start_str": "04:48",
-        "end_str": "11:29",
-        "duration": 6.68,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "54211": {
-        "start_str": "04:50",
-        "end_str": "13:02",
-        "duration": 8.2,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "9226": {
-        "start_str": "04:54",
-        "end_str": "13:10",
-        "duration": 8.27,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "11641": {
-        "start_str": "04:57",
-        "end_str": "11:37",
-        "duration": 6.67,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "54231": {
-        "start_str": "04:58",
-        "end_str": "12:32",
-        "duration": 7.57,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "9397": {
-        "start_str": "05:02",
-        "end_str": "12:28",
-        "duration": 7.43,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "9305": {
-        "start_str": "05:05",
-        "end_str": "11:46",
-        "duration": 6.68,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "65119": {
-        "start_str": "05:07",
-        "end_str": "12:48",
-        "duration": 7.68,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "11307": {
-        "start_str": "05:12",
-        "end_str": "12:52",
-        "duration": 7.67,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "11533": {
-        "start_str": "05:14",
-        "end_str": "13:57",
-        "duration": 8.72,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "9432": {
-        "start_str": "05:17",
-        "end_str": "12:56",
-        "duration": 7.65,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "54794": {
-        "start_str": "05:18",
-        "end_str": "13:24",
-        "duration": 8.1,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "54125": {
-        "start_str": "05:21",
-        "end_str": "12:45",
+    "9447": {
+        "start_str": "04:43",
+        "end_str": "12:07",
         "duration": 7.4,
         "is_next_day": false,
         "shift_code": 1
     },
-    "54681": {
-        "start_str": "05:25",
+    "65282": {
+        "start_str": "05:27",
+        "end_str": "14:01",
+        "duration": 8.57,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "54583": {
+        "start_str": "05:40",
         "end_str": "13:06",
-        "duration": 7.68,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "54630": {
-        "start_str": "05:26",
-        "end_str": "14:07",
-        "duration": 8.68,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "9136": {
-        "start_str": "05:28",
-        "end_str": "13:31",
-        "duration": 8.05,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "54394": {
-        "start_str": "05:29",
-        "end_str": "12:55",
         "duration": 7.43,
         "is_next_day": false,
         "shift_code": 1
     },
-    "9428": {
-        "start_str": "05:36",
-        "end_str": "13:39",
-        "duration": 8.05,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "54239": {
-        "start_str": "05:36",
-        "end_str": "14:16",
-        "duration": 8.67,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "54309": {
-        "start_str": "05:44",
-        "end_str": "13:48",
-        "duration": 8.07,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "9988": {
-        "start_str": "05:55",
-        "end_str": "11:15",
-        "duration": 5.33,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "54467": {
-        "start_str": "06:01",
-        "end_str": "12:41",
-        "duration": 6.67,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "11620": {
-        "start_str": "06:06",
-        "end_str": "11:25",
-        "duration": 5.32,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "11481": {
-        "start_str": "06:06",
-        "end_str": "14:45",
-        "duration": 8.65,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "54322": {
-        "start_str": "06:16",
-        "end_str": "11:36",
-        "duration": 5.33,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "10572": {
-        "start_str": "06:22",
-        "end_str": "14:25",
-        "duration": 8.05,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "11185": {
-        "start_str": "06:25",
-        "end_str": "11:48",
-        "duration": 5.38,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "10964": {
-        "start_str": "06:31",
-        "end_str": "14:36",
-        "duration": 8.08,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "55002": {
-        "start_str": "06:46",
-        "end_str": "12:11",
-        "duration": 5.42,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "54690": {
-        "start_str": "07:01",
-        "end_str": "15:04",
-        "duration": 8.05,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "54020": {
-        "start_str": "07:14",
-        "end_str": "15:23",
-        "duration": 8.15,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "11058": {
-        "start_str": "08:11",
-        "end_str": "16:03",
-        "duration": 7.87,
-        "is_next_day": false,
-        "shift_code": 1
-    },
-    "6356": {
-        "start_str": "16:10",
-        "end_str": "01:18",
-        "duration": 9.13,
-        "is_next_day": true,
-        "shift_code": 2
-    },
-    "65298": {
-        "start_str": "12:13",
-        "end_str": "21:22",
-        "duration": 9.15,
-        "is_next_day": false,
-        "shift_code": 2
-    },
-    "9301": {
-        "start_str": "15:53",
-        "end_str": "00:12",
-        "duration": 8.32,
-        "is_next_day": true,
-        "shift_code": 2
-    },
-    "54543": {
-        "start_str": "16:37",
-        "end_str": "00:49",
-        "duration": 8.2,
-        "is_next_day": true,
-        "shift_code": 2
-    },
-    "37881": {
-        "start_str": "16:28",
-        "end_str": "00:41",
+    "65087": {
+        "start_str": "05:49",
+        "end_str": "14:02",
         "duration": 8.22,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "13458": {
+        "start_str": "06:00",
+        "end_str": "13:40",
+        "duration": 7.67,
+        "is_next_day": false,
+        "shift_code": 1
+    },
+    "54676": {
+        "start_str": "12:07",
+        "end_str": "20:45",
+        "duration": 8.63,
+        "is_next_day": false,
+        "shift_code": 2
+    },
+    "65280": {
+        "start_str": "16:25",
+        "end_str": "00:55",
+        "duration": 8.5,
         "is_next_day": true,
         "shift_code": 2
     },
-    "6219": {
-        "start_str": "16:56",
-        "end_str": "01:07",
-        "duration": 8.18,
-        "is_next_day": true,
-        "shift_code": 2
-    },
-    "5559": {
-        "start_str": "12:32",
-        "end_str": "21:40",
-        "duration": 9.13,
-        "is_next_day": false,
-        "shift_code": 2
-    },
-    "54935": {
-        "start_str": "15:43",
-        "end_str": "00:02",
-        "duration": 8.32,
-        "is_next_day": true,
-        "shift_code": 2
-    },
-    "9485": {
-        "start_str": "16:09",
-        "end_str": "00:28",
-        "duration": 8.32,
-        "is_next_day": true,
-        "shift_code": 2
-    },
-    "65086": {
-        "start_str": "12:48",
-        "end_str": "21:56",
-        "duration": 9.13,
-        "is_next_day": false,
-        "shift_code": 2
-    },
-    "9332": {
-        "start_str": "12:52",
-        "end_str": "22:06",
-        "duration": 9.23,
-        "is_next_day": false,
-        "shift_code": 2
-    },
-    "11316": {
-        "start_str": "13:57",
-        "end_str": "22:02",
-        "duration": 8.08,
-        "is_next_day": false,
-        "shift_code": 2
-    },
-    "11735": {
-        "start_str": "12:56",
-        "end_str": "21:06",
-        "duration": 8.17,
-        "is_next_day": false,
-        "shift_code": 2
-    },
-    "7048": {
-        "start_str": "13:24",
-        "end_str": "21:44",
-        "duration": 8.33,
-        "is_next_day": false,
-        "shift_code": 2
-    },
-    "9853": {
-        "start_str": "16:01",
-        "end_str": "00:20",
-        "duration": 8.32,
-        "is_next_day": true,
-        "shift_code": 2
-    },
-    "11102": {
+    "65167": {
         "start_str": "13:06",
-        "end_str": "21:17",
-        "duration": 8.18,
+        "end_str": "21:32",
+        "duration": 8.43,
         "is_next_day": false,
         "shift_code": 2
     },
-    "10075": {
-        "start_str": "14:07",
-        "end_str": "22:11",
-        "duration": 8.07,
+    "65203": {
+        "start_str": "14:02",
+        "end_str": "22:05",
+        "duration": 8.05,
         "is_next_day": false,
         "shift_code": 2
     },
-    "10808": {
-        "start_str": "13:31",
-        "end_str": "21:55",
-        "duration": 8.4,
+    "11694": {
+        "start_str": "13:40",
+        "end_str": "21:42",
+        "duration": 8.03,
         "is_next_day": false,
-        "shift_code": 2
-    },
-    "11629": {
-        "start_str": "16:46",
-        "end_str": "00:58",
-        "duration": 8.2,
-        "is_next_day": true,
-        "shift_code": 2
-    },
-    "9354": {
-        "start_str": "13:39",
-        "end_str": "22:04",
-        "duration": 8.42,
-        "is_next_day": false,
-        "shift_code": 2
-    },
-    "9341": {
-        "start_str": "14:16",
-        "end_str": "20:43",
-        "duration": 6.45,
-        "is_next_day": false,
-        "shift_code": 2
-    },
-    "9173": {
-        "start_str": "13:48",
-        "end_str": "22:13",
-        "duration": 8.42,
-        "is_next_day": false,
-        "shift_code": 2
-    },
-    "10480": {
-        "start_str": "16:30",
-        "end_str": "00:17",
-        "duration": 7.78,
-        "is_next_day": true,
-        "shift_code": 2
-    },
-    "11236": {
-        "start_str": "16:19",
-        "end_str": "01:27",
-        "duration": 9.13,
-        "is_next_day": true,
-        "shift_code": 2
-    },
-    "11534": {
-        "start_str": "16:39",
-        "end_str": "00:26",
-        "duration": 7.78,
-        "is_next_day": true,
-        "shift_code": 2
-    },
-    "9407": {
-        "start_str": "14:45",
-        "end_str": "21:12",
-        "duration": 6.45,
-        "is_next_day": false,
-        "shift_code": 2
-    },
-    "11822": {
-        "start_str": "18:03",
-        "end_str": "23:18",
-        "duration": 5.25,
-        "is_next_day": false,
-        "shift_code": 2
-    },
-    "54821": {
-        "start_str": "14:25",
-        "end_str": "20:04",
-        "duration": 5.65,
-        "is_next_day": false,
-        "shift_code": 2
-    },
-    "65202": {
-        "start_str": "16:07",
-        "end_str": "00:01",
-        "duration": 7.9,
-        "is_next_day": true,
-        "shift_code": 2
-    },
-    "54784": {
-        "start_str": "14:36",
-        "end_str": "22:55",
-        "duration": 8.32,
-        "is_next_day": false,
-        "shift_code": 2
-    },
-    "54909": {
-        "start_str": "16:48",
-        "end_str": "00:35",
-        "duration": 7.78,
-        "is_next_day": true,
-        "shift_code": 2
-    },
-    "9116": {
-        "start_str": "15:04",
-        "end_str": "20:44",
-        "duration": 5.67,
-        "is_next_day": false,
-        "shift_code": 2
-    },
-    "11924": {
-        "start_str": "15:23",
-        "end_str": "21:02",
-        "duration": 5.65,
-        "is_next_day": false,
-        "shift_code": 2
-    },
-    "10485": {
-        "start_str": "16:03",
-        "end_str": "00:44",
-        "duration": 8.68,
-        "is_next_day": true,
-        "shift_code": 2
-    },
-    "9340": {
-        "start_str": "17:06",
-        "end_str": "01:17",
-        "duration": 8.18,
-        "is_next_day": true,
         "shift_code": 2
     }
 }

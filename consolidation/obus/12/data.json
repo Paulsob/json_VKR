@@ -1,0 +1,45 @@
+{
+    "route": "12",
+    "employees": [
+        {
+            "tab_number": "60659",
+            "employee": "Трухин Денис Александрович",
+            "transport": "2123"
+        },
+        {
+            "tab_number": "27106",
+            "employee": "Касымов Сергей Андреевич",
+            "transport": "2123"
+        },
+        {
+            "tab_number": "30592",
+            "employee": "Даниленко Евгений Николаевич",
+            "transport": "2125"
+        },
+        {
+            "tab_number": "27950",
+            "employee": "Цыберкин Виктор Николаевич",
+            "transport": "2125"
+        },
+        {
+            "tab_number": "37466",
+            "employee": "Воскресенский Владимир Владимирович",
+            "transport": "2127"
+        },
+        {
+            "tab_number": "26611",
+            "employee": "Эрглис Тимур Эдуардович",
+            "transport": "2127"
+        },
+        {
+            "tab_number": "60095",
+            "employee": "Шевченко Алексей Васильевич",
+            "transport": "2132"
+        },
+        {
+            "tab_number": "30588",
+            "employee": "Барабанщиков Виталий Витальевич",
+            "transport": "2132"
+        }
+    ]
+}

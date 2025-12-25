@@ -1,0 +1,70 @@
+{
+    "route": "38",
+    "employees": [
+        {
+            "tab_number": "30894",
+            "employee": "Мейке Надежда Алексеевна",
+            "transport": ""
+        },
+        {
+            "tab_number": "28267",
+            "employee": "Шапошников Вячеслав Владимирович",
+            "transport": ""
+        },
+        {
+            "tab_number": "60456",
+            "employee": "Михайлов Дмитрий Владимирович",
+            "transport": "2020"
+        },
+        {
+            "tab_number": "60455",
+            "employee": "Пашаев Турал Сеймур оглы",
+            "transport": "2020"
+        },
+        {
+            "tab_number": "60133",
+            "employee": "Радченко Сергей Сергеевич",
+            "transport": "2467"
+        },
+        {
+            "tab_number": "30059",
+            "employee": "Кручинина Ольга Викторовна",
+            "transport": "2467"
+        },
+        {
+            "tab_number": "60424",
+            "employee": "Лапина Светлана Витальевна",
+            "transport": "2468"
+        },
+        {
+            "tab_number": "29929",
+            "employee": "Киляков Сергей Викторович",
+            "transport": "2469"
+        },
+        {
+            "tab_number": "25244",
+            "employee": "Титов Виктор Иванович",
+            "transport": "2469"
+        },
+        {
+            "tab_number": "26954",
+            "employee": "Гудалин Александр Сергеевич",
+            "transport": "2471"
+        },
+        {
+            "tab_number": "25184",
+            "employee": "Жуковский Юрий Николаевич",
+            "transport": "2471"
+        },
+        {
+            "tab_number": "60494",
+            "employee": "Гришаков Павел Сергеевич",
+            "transport": "2472"
+        },
+        {
+            "tab_number": "27581",
+            "employee": "Порохин Андрей Борисович",
+            "transport": "2472"
+        }
+    ]
+}
